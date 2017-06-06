@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   entry: [
-    './src/index.js'
+    './src/index.js',
   ],
   resolve: {
     extensions: ['.js']
