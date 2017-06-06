@@ -5,7 +5,7 @@ module.exports = {
     './src/index.js',
   ],
   resolve: {
-    extensions: ['.js']
+    extensions: ['.js'],
   },
   module: {
     rules: [
