@@ -2,10 +2,10 @@ const path = require('path');
 
 module.exports = {
   entry: [
-    './src/index.js'
+    './src/index.js',
   ],
   resolve: {
-    extensions: ['.js']
+    extensions: ['.js'],
   },
   module: {
     rules: [
@@ -15,7 +15,7 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           query: {
-            presets:['es2015','react']
+            presets:['es2015','react'],
           }
         }
       }
