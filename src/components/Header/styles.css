@@ -1,0 +1,21 @@
+.container {
+  overflow: hidden;
+  margin-bottom: 50px;
+  background: #8d2f54;
+  clip-path: polygon(0 0, 100% 0, 100% 75%, 50% 100%, 0 75%);
+}
+
+.heading {
+  font-family: Rye;
+  font-size: 50px;
+  line-height: 50px;
+  font-weight: normal;
+  text-align: center;
+  color: #fff;
+}
+
+.subheading {
+  font-family: 'Libre Baskerville';
+  font-style: italic;
+  font-size: 25px;
+}

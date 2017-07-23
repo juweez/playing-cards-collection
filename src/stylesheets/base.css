@@ -1,0 +1,11 @@
+html, body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Libre Baskerville';
+  background-color: #fff;
+  background-repeat: no-repeat;
+  color: #666;
+}
