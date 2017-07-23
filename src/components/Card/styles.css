@@ -1,0 +1,21 @@
+.container {
+  box-shadow: -16px 0px 20px 0px rgba(0, 0, 0, 0.3);
+}
+
+.img {
+  vertical-align: bottom;
+  max-width: 100%;
+}
+
+.title {
+  padding: 16px;
+  background-color: #8d2f54;
+  color: white;
+}
+
+.heading {
+  margin: 0;
+  font-size: 16px;
+  font-weight: normal;
+  letter-spacing: 0.02em;
+}
