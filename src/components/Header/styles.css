@@ -1,21 +1,24 @@
 .container {
   overflow: hidden;
   margin-bottom: 50px;
-  background: #8d2f54;
+  background-color: #35302c;
   clip-path: polygon(0 0, 100% 0, 100% 75%, 50% 100%, 0 75%);
 }
 
 .heading {
-  font-family: Rye;
+  font-family: 'Libre Baskerville';
   font-size: 50px;
-  line-height: 50px;
+  line-height: 40px;
   font-weight: normal;
   text-align: center;
-  color: #fff;
+  color: #c18e45;
+  text-shadow: 1px 1px #e6c18c;
 }
 
 .subheading {
-  font-family: 'Libre Baskerville';
-  font-style: italic;
-  font-size: 25px;
+  font-family: 'Libre Franklin';
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 500;
 }
