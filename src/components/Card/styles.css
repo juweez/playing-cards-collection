@@ -1,5 +1,7 @@
 .container {
   box-shadow: -16px 0px 20px 0px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: transform 0.25s linear, box-shadow 0.25s linear;
 }
 
 .img {
@@ -7,10 +9,9 @@
   max-width: 100%;
 }
 
-.title {
-  padding: 16px;
-  background-color: #8d2f54;
-  color: white;
+.container:hover {
+  box-shadow: -10px 0px 20px 0px rgba(0, 0, 0, 0.4);
+  transform: scale(1.025);
 }
 
 .heading {
