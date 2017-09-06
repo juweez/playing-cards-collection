@@ -10,7 +10,7 @@ config.output = {
 };
 
 config.module.rules.push({
-  test: /\.css$/,
+  test: /\.(css|scss)$/i,
   use: [
     { loader: 'style-loader' },
     {
@@ -20,6 +20,9 @@ config.module.rules.push({
         modules: true,
         localIdentName: '[name]__[local]___[hash:base64:5]',
       },
+    },
+    {
+      loader: 'sass-loader',
     },
   ],
 });

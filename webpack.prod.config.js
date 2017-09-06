@@ -10,9 +10,16 @@ config.output = {
 };
 
 config.module.rules.push({
-  test: /\.css$/,
+  test: /\.(css|scss)$/i,
   use: ExtractTextPlugin({
-    loader: 'css-loader?importLoader=1&modules&localIdentName=[name]__[local]___[hash:base64:5]',
+    use: [
+      {
+        loader: 'css-loader?importLoader=1&modules&localIdentName=[name]__[local]___[hash:base64:5]',
+      },
+      {
+        loader: 'sass-loader',
+      },
+    ],
   }),
 });
 
