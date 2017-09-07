@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 
 import styles from './styles.css';
 
-export default function Card({ item }) {
+export default function Card({ item, openOverlay }) {
   return (
-    <div className={styles.container}>
+    <div className={styles.container} onClick={() => openOverlay(item)}>
       <div className={styles.imgContainer}>
         <img className={styles.img} src={`http://juweez.co.uk/${item.photos[0]}`} alt={item.title} />
       </div>

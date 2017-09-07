@@ -1,0 +1,140 @@
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateY(-100%);
+  transition: transform 0.5s, visibility 0s 0.5s;
+  z-index: 10;
+
+  p {
+    font-family: 'Libre Franklin';
+    line-height: 1.5;
+  }
+}
+
+.open {
+  visibility: visible;
+  transform: translateY(0%);
+  transition: transform 0.5s;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 25px;
+  background-color: white;
+  overflow: scroll;
+
+  @media all and (min-width: 768px) {
+    padding: 50px;
+  }
+}
+
+
+.content {
+  min-height: 100%;
+  padding: 25px;
+  border: 1px solid #c18e45;
+
+  @media all and (min-width: 641px) {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  @media all and (min-width: 768px) {
+    display: flex;
+    padding: 50px;
+  }
+}
+
+.imgContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 25px;
+
+  img {
+    width: 100%;
+    max-width: 240px;
+    box-shadow: -16px 0px 20px 0px rgba(0, 0, 0, 0.3);
+  }
+
+  @media all and (min-width: 641px) {
+    margin-right: 25px;
+    margin-bottom: 0;
+  }
+
+  @media all and (min-width: 768px) {
+    margin-right: 50px;
+
+    img {
+      max-width: 320px;
+    }
+  }
+}
+
+.title {
+  margin-top: 0;
+  font-family: 'Libre Baskerville';
+  font-size: 24px;
+  font-weight: normal;
+  color: #c18e45;
+
+  @media all and (min-width: 768px) {
+    font-size: 30px;
+  }
+}
+
+.property-title {
+  display: block;
+  font-weight: bold;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #999;
+  letter-spacing: 1px;
+}
+
+.close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 32px;
+  height: 32px;
+  text-indent: -9999px;
+  cursor: pointer;
+  transition: transform .25s ease-in-out;
+
+  &:hover {
+    transform: rotate(180deg);
+  }
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    display: block;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 32px;
+    height: 0;
+    border-top: 2px solid #c18e45;
+    transform: rotate(45deg);
+    transform-origin: center;
+  }
+
+  &:after {
+    transform: rotate(-45deg);
+  }
+}
