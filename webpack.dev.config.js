@@ -9,6 +9,8 @@ config.output = {
   filename: 'bundle.js',
 };
 
+config.devtool = 'source-map';
+
 config.module.rules.push({
   test: /\.(css|scss)$/i,
   use: [
