@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './styles.css';
+import styles from './card.scss';
 
 export default function Card({ item, openOverlay }) {
   return (

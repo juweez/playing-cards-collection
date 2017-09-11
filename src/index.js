@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
 import './stylesheets/base.css';
-import grid from './stylesheets/grid.css';
+import grid from './stylesheets/grid.scss';
 import Card from './components/Card';
 import Header from './components/Header';
 import Overlay from './components/Overlay';
