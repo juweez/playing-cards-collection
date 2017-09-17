@@ -3,7 +3,9 @@
   overflow: hidden;
   margin-bottom: 25px;
   padding: 25px 20px;
+  background-image: url('./card-bg.jpg');
   background-color: #1b243e;
+  background-size: cover;
   text-align: center;
 
   &:before {
@@ -14,7 +16,7 @@
     width: 100%;
     height: 100%;
     background-color: #1b243e;
-    opacity: 0.85;
+    opacity: 0.9;
   }
 
   @media all and (min-width: 768px) {
