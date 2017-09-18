@@ -11,7 +11,7 @@ config.output = {
 
 config.module.rules.push({
   test: /\.(css|scss)$/i,
-  use: ExtractTextPlugin({
+  use: ExtractTextPlugin.extract({
     use: [
       {
         loader: 'css-loader?importLoader=1&modules&localIdentName=[name]__[local]___[hash:base64:5]',

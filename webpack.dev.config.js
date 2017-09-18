@@ -29,15 +29,6 @@ config.module.rules.push({
   ],
 });
 
-config.module.rules.push({
-    test: /\.(png|jpg|gif)$/,
-    use: [
-      {
-        loader: 'file-loader',
-    }
-  ],
-});
-
 config.devServer = {
   contentBase: './build',
 };
