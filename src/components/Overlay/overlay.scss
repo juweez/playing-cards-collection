@@ -9,10 +9,16 @@
   transform: translateY(-100%);
   transition: transform 0.5s, visibility 0s 0.5s;
   z-index: 10;
+  overflow-y: auto;
+  background-color: #1b243e;
 
   p {
     font-family: 'Libre Franklin';
     line-height: 1.5;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }
 
@@ -23,33 +29,45 @@
 }
 
 .background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: 25px;
-  background-color: white;
-  overflow: scroll;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  padding: 50px 0;
 
   @media all and (min-width: 768px) {
-    padding: 50px;
+    padding: 50px 0;
   }
 }
 
+.body {
+  width: 100%;
+  max-width: 320px;
+  padding: 25px;
+  background-color: #fff;
+
+  @media all and (min-width: 641px) {
+    width: 90%;
+    max-width: 600px;
+  }
+
+  @media all and (min-width: 768px) {
+    padding: 50px;
+    max-width: 850px;
+  }
+}
 
 .content {
   min-height: 100%;
-  padding: 25px;
-  border: 1px solid #c18e45;
 
   @media all and (min-width: 641px) {
     display: flex;
     align-items: flex-start;
+    padding: 25px;
+    border: 1px solid #c18e45;
   }
 
   @media all and (min-width: 768px) {
-    display: flex;
     padding: 50px;
   }
 }
@@ -58,28 +76,31 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 20px;
-  margin-right: 20px;
   margin-bottom: 25px;
 
   img {
     width: 100%;
-    max-width: 240px;
     box-shadow: -16px 0px 20px 0px rgba(0, 0, 0, 0.3);
   }
 
   @media all and (min-width: 641px) {
-    margin-right: 25px;
+    width: 225px;
     margin-bottom: 0;
+    padding-right: 25px;
   }
 
   @media all and (min-width: 768px) {
-    margin-right: 50px;
-
-    img {
-      max-width: 320px;
-    }
+    width: 250px;
+    padding-right: 50px;
   }
+
+  @media all and (min-width: 980px) {
+    width: 300px;
+  }
+}
+
+.details {
+  flex: 1 1 0%;
 }
 
 .title {
@@ -97,10 +118,14 @@
 .property-title {
   display: block;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 12px;
   text-transform: uppercase;
   color: #999;
   letter-spacing: 1px;
+
+  @media all and (min-width: 768px) {
+    font-size: 14px;
+  }
 }
 
 .close {
