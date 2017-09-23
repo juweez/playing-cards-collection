@@ -1,5 +1,5 @@
 .container {
-  max-width: 1440px;
+  max-width: 2000px;
   margin: 0 auto;
   padding: 0 20px;
   display: grid;
@@ -11,20 +11,20 @@
   }
 
   @media all and (min-width: 641px) {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  @media all and (min-width: 768px) {
     padding: 0 50px;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-gap: 40px;
   }
 
-  @media all and (min-width: 980px) {
+  @media all and (min-width: 900px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media all and (min-width: 1024px) {
     grid-template-columns: repeat(5, 1fr);
   }
 
-  @media all and (min-width: 1366px) {
+  @media all and (min-width: 1600px) {
     grid-template-columns: repeat(6, 1fr);
   }
 }
