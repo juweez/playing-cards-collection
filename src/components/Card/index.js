@@ -1,17 +1,29 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import LazyLoad from 'react-lazyload';
+import { forceCheck } from 'react-lazyload';
 
 import styles from './card.scss';
 
-export default function Card({ item, openOverlay }) {
-  return (
-    <div className={styles.container} onClick={() => openOverlay(item)}>
-      <LazyLoad height={250} offset={150}>
-        <img className={styles.img} src={`http://juweez.co.uk/${item.photos[0]}`} alt={item.title} />
-      </LazyLoad>
-    </div>
-  );
+export default class Card extends Component {
+  componentDidUpdate() {
+    forceCheck();
+  }
+
+  render() {
+    const {
+      item,
+      openOverlay,
+    } = this.props;
+
+    return (
+      <a href="#" className={styles.container} onClick={() => openOverlay(item)}>
+        <LazyLoad height={250} offset={50} once>
+          <img className={styles.img} src={`http://juweez.co.uk/${item.photos[0]}`} alt={item.title} />
+        </LazyLoad>
+      </a>
+    );
+  }
 }
 
 Card.propTypes = {
