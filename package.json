@@ -9,6 +9,7 @@
     "start": "webpack-dev-server --config webpack.dev.config.js --progress --profile --colors",
     "lint": "eslint --ext js src || exit 0",
     "dev": "webpack-dashboard -- webpack-dev-server --config webpack.dev.config.js --progress --profile --colors"
+    "test": "eslint --ext js src || exit 0"
   },
   "author": {
     "email": "jb@juweez.co.uk",
