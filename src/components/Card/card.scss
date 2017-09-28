@@ -5,8 +5,21 @@
   transition: transform 0.2s linear;
 }
 
+.imgContainer {
+  position: relative;
+  width: 100%;
+  padding-top: 142%;
+}
+
 .img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
   vertical-align: bottom;
+  width: auto;
+  height: 100%;
   max-width: 100%;
   box-shadow: -16px 0px 20px 0px rgba(0, 0, 0, 0.3);
   transition: box-shadow 0.2s linear;

@@ -19,7 +19,9 @@ export default class Card extends Component {
     return (
       <a href="#" className={styles.container} onClick={() => openOverlay(item)}>
         <LazyLoad height={250} offset={50} once>
-          <img className={styles.img} src={`http://juweez.co.uk/${item.photos[0]}`} alt={item.title} />
+          <div className={styles.imgContainer}>
+            <img className={styles.img} src={`http://juweez.co.uk/${item.photos[0]}`} alt={item.title} />
+          </div>
         </LazyLoad>
       </a>
     );
