@@ -1,3 +1,5 @@
+var CopyWebpackPlugin = require('copy-webpack-plugin');
+
 module.exports = {
   entry: [
     'whatwg-fetch',
@@ -26,5 +28,9 @@ module.exports = {
       },
     ],
   },
-  plugins: [],
+  plugins: [
+    new CopyWebpackPlugin([
+      { from: 'src/assets', to: 'assets' }
+    ])
+  ],
 };
