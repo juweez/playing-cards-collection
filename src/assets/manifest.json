@@ -1,5 +1,6 @@
 {
     "name": "Playing Cards Collection",
+    "short_name": "Playing Cards",
     "icons": [
         {
             "src": "android-chrome-192x192.png",
@@ -14,6 +15,6 @@
     ],
     "theme_color": "#1b243e",
     "background_color": "#1b243e",
-    "start_url": "http://cards.juweez.co.uk",
+    "start_url": "/",
     "display": "standalone"
 }
