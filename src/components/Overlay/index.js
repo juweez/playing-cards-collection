@@ -16,7 +16,7 @@ export default function Overlay({ open, closeOverlay, item }) {
           {item && (
               <div className={styles.content}>
                 <div className={styles.imgContainer}>
-                  <img className={styles.img} src={`http://juweez.co.uk/${item.photos[0]}`} alt={item.title} />
+                  <img className={styles.img} src={`https://juweez.co.uk/${item.photos[0]}`} alt={item.title} />
                 </div>
                 <div className={styles.details}>
                   <h2 className={styles.title}>{item.title}</h2>
