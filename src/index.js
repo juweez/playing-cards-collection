@@ -29,7 +29,7 @@ class App extends Component {
   }
 
   loadData() {
-    fetch('http://juweez.co.uk/api/cards.json')
+    fetch('https://juweez.co.uk/api/cards.json')
       .then(response => response.json())
       .then((data) => {
         const sortedCards = data.data.sort(function(a, b){
