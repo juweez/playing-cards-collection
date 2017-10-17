@@ -6,8 +6,9 @@ import styles from './search.scss';
 export default function Search({ inputRef, searchCards }) {
   return (
     <div className={styles.group}>
-      <label className={styles.label}>Search</label>
+      <label className={styles.label} htmlFor="search">Search</label>
       <input
+        id="search"
         className={styles.input}
         ref={inputRef}
         onKeyUp={searchCards}
@@ -18,6 +19,6 @@ export default function Search({ inputRef, searchCards }) {
 }
 
 Search.propTypes = {
-  inputRef: PropTypes.func,
-  searchCards: PropTypes.func,
+  inputRef: PropTypes.func.isRequired,
+  searchCards: PropTypes.func.isRequired,
 };

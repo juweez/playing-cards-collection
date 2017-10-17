@@ -32,9 +32,9 @@ class App extends Component {
     fetch('https://juweez.co.uk/api/cards.json')
       .then(response => response.json())
       .then((data) => {
-        const sortedCards = data.data.sort(function(a, b){
-          if(a.title < b.title) return -1;
-          if(a.title > b.title) return 1;
+        const sortedCards = data.data.sort((a, b) => {
+          if (a.title < b.title) return -1;
+          if (a.title > b.title) return 1;
           return 0;
         });
 
@@ -42,7 +42,7 @@ class App extends Component {
           allCards: data.data,
           searchResults: sortedCards,
         });
-      }).catch(err => console.error('Cannot retrieve card data.', err));
+      }).catch(err => console.error('Cannot retrieve card data.', err)); // eslint-disable-line no-console
   }
 
   openOverlay(item) {
@@ -73,13 +73,11 @@ class App extends Component {
       this.setState({
         searchResults: this.state.allCards,
       });
-
     } else {
       this.setState({
         searchResults: fuse.search(searchTerm),
       });
     }
-
   }
 
   render() {
@@ -90,7 +88,7 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <Search inputRef={el => this.inputElement = el} searchCards={this.searchCards} />
+        <Search inputRef={(el) => { this.inputElement = el; }} searchCards={this.searchCards} />
         <div className={grid.container}>{cards}</div>
         <Overlay
           open={this.state.isOverlayOpen}
