@@ -19,7 +19,7 @@ export default class Card extends Component {
       <a href="#card-overlay" className={styles.container} onClick={() => openOverlay(item)}>
         <LazyLoad height={250} offset={50} once>
           <div className={styles.imgContainer}>
-            <img className={styles.img} src={`https://juweez.co.uk/${item.photos[0]}`} alt={item.title} />
+            <img className={styles.img} src={`https://juweez.co.uk/${item.image_url}`} alt={item.title} />
           </div>
         </LazyLoad>
       </a>
@@ -28,9 +28,6 @@ export default class Card extends Component {
 }
 
 Card.propTypes = {
-  item: PropTypes.shape({
-    photos: PropTypes.array.isRequired,
-    title: PropTypes.string.isRequired,
-  }).isRequired,
+  item: PropTypes.shape.isRequired,
   openOverlay: PropTypes.func.isRequired,
 };
