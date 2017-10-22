@@ -45,7 +45,6 @@
     "prop-types": "^15.5.10",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
-    "react-lazyload": "^2.2.7",
     "webpack": "^3.7.0",
     "webpack-cleanup-plugin": "^0.5.1",
     "whatwg-fetch": "^2.0.3"

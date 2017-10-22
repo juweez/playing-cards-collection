@@ -1,12 +1,45 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import LazyLoad, { forceCheck } from 'react-lazyload';
-
+import IntersectionObserver from '../../utils/intersectionObserver';
+import placeholder from './placeholder.jpg';
 import styles from './card.scss';
 
 export default class Card extends Component {
-  componentDidUpdate() {
-    forceCheck();
+  // Preload image
+  static fetchImage(url) {
+    return new Promise((resolve, reject) => {
+      const image = new Image();
+      image.src = url;
+      image.onload = resolve;
+      image.onerror = reject;
+    });
+  }
+
+  constructor(props) {
+    super(props);
+
+    this.becameVisible = this.becameVisible.bind(this);
+    this.applyImage = this.applyImage.bind(this);
+  }
+
+  componentDidMount() {
+    if (IntersectionObserver.isSupported) {
+      IntersectionObserver.observe(this.image, this.becameVisible);
+    } else {
+      this.becameVisible();
+    }
+  }
+
+  applyImage(src) {
+    this.image.src = src;
+  }
+
+  becameVisible() {
+    const { src } = this.image.dataset;
+
+    return this.constructor.fetchImage(src).then(() => {
+      this.applyImage(src);
+    });
   }
 
   render() {
@@ -17,11 +50,15 @@ export default class Card extends Component {
 
     return (
       <a href="#card-overlay" className={styles.container} onClick={() => openOverlay(item)}>
-        <LazyLoad height={250} offset={50} once>
-          <div className={styles.imgContainer}>
-            <img className={styles.img} src={`https://juweez.co.uk/${item.image_url}`} alt={item.title} />
-          </div>
-        </LazyLoad>
+        <div className={styles.imgContainer}>
+          <img
+            ref={(el) => { this.image = el; }}
+            className={styles.img}
+            src={placeholder}
+            data-src={`https://juweez.co.uk/${item.image_url}`}
+            alt={item.title}
+          />
+        </div>
       </a>
     );
   }
