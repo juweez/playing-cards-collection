@@ -3,7 +3,7 @@
   overflow: hidden;
   margin-bottom: 25px;
   padding: 25px 20px;
-  background-image: url('./card-bg.jpg');
+  background-image: url('./card-bg-small.jpg');
   background-color: #1b243e;
   background-size: cover;
   background-position: center;
@@ -20,9 +20,17 @@
     opacity: 0.9;
   }
 
+  @media all and (min-width: 641px) {
+  background-image: url('./card-bg-medium.jpg');
+  }
+
   @media all and (min-width: 768px) {
     margin-bottom: 50px;
     padding: 50px 20px;
+  }
+
+  @media all and (min-width: 1200px) {
+  background-image: url('./card-bg-large.jpg');
   }
 }
 
