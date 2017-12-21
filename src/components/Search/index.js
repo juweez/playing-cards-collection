@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './search.scss';
+import styles from './search.module.scss';
 
 export default function Search({ inputRef, searchCards }) {
   return (

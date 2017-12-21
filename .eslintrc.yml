@@ -8,5 +8,7 @@ env:
 rules:
   space-before-function-paren: 0
   react/jsx-filename-extension: [1, { "extensions": [".js", ".jsx"] }]
+  react/forbid-prop-types: 0
+  jsx-a11y/label-has-for: [2, "required": { "some": [ "nesting", "id" ] }]
 settings:
-  import/core-modules: [ webpack-dashboard/plugin ]
+  import/core-modules: [ webpack-dashboard/plugin, react, prop-types, react-helmet ]

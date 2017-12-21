@@ -51,7 +51,7 @@ class IntersectionObserverWrapper {
 }
 
 export default (function IntersectionObserver() {
-  const isSupported = window.IntersectionObserver;
+  const isSupported = typeof window !== 'undefined' && window.IntersectionObserver;
 
   if (!isSupported) {
     return {
