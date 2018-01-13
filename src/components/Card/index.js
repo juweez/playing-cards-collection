@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import IntersectionObserver from '../../utils/intersectionObserver';
 import placeholder from './placeholder.jpg';
-import styles from './card.scss';
+import styles from './card.module.scss';
 
 export default class Card extends Component {
   // Preload image
@@ -49,7 +49,11 @@ export default class Card extends Component {
     } = this.props;
 
     return (
-      <a href="#card-overlay" className={styles.container} onClick={() => openOverlay(item)}>
+      <a
+        href="#card-overlay"
+        className={styles.container}
+        onClick={evt => openOverlay(evt, item)}
+      >
         <div className={styles.imgContainer}>
           <img
             ref={(el) => { this.image = el; }}
@@ -65,6 +69,6 @@ export default class Card extends Component {
 }
 
 Card.propTypes = {
-  item: PropTypes.shape.isRequired,
+  item: PropTypes.object.isRequired,
   openOverlay: PropTypes.func.isRequired,
 };

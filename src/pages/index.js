@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import Fuse from 'fuse.js';
 
-import './stylesheets/base.css';
-import grid from './stylesheets/grid.scss';
-import Card from './components/Card';
-import Header from './components/Header';
-import Overlay from './components/Overlay';
-import Search from './components/Search';
+import Card from '../components/Card';
+import Grid from '../components/Grid';
+import Header from '../components/Header';
+import Overlay from '../components/Overlay';
+import Search from '../components/Search';
 
-class App extends Component {
+class IndexPage extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       allCards: [],
       searchResults: [],
@@ -45,7 +44,9 @@ class App extends Component {
       }).catch(err => console.error('Cannot retrieve card data.', err)); // eslint-disable-line no-console
   }
 
-  openOverlay(item) {
+  openOverlay(evt, item) {
+    evt.preventDefault();
+
     this.setState({
       isOverlayOpen: true,
       selectedCard: item,
@@ -89,7 +90,7 @@ class App extends Component {
       <div>
         <Header />
         <Search inputRef={(el) => { this.inputElement = el; }} searchCards={this.searchCards} />
-        <div className={grid.container}>{cards}</div>
+        <Grid>{cards}</Grid>
         <Overlay
           open={this.state.isOverlayOpen}
           closeOverlay={this.closeOverlay}
@@ -100,4 +101,4 @@ class App extends Component {
   }
 }
 
-ReactDOM.render(<App />, document.querySelector('#app'));
+export default IndexPage;

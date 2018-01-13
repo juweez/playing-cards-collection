@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import styles from './overlay.scss';
+import styles from './overlay.module.scss';
 
 export default function Overlay({ open, closeOverlay, item }) {
   const classes = classNames({
@@ -61,9 +61,9 @@ export default function Overlay({ open, closeOverlay, item }) {
 Overlay.propTypes = {
   open: PropTypes.bool.isRequired,
   closeOverlay: PropTypes.func.isRequired,
-  item: PropTypes.shape,
+  item: PropTypes.object,
 };
 
 Overlay.defaultProps = {
-  item: '',
+  item: null,
 };
