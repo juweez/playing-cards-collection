@@ -59,7 +59,7 @@ export default class Card extends Component {
             ref={(el) => { this.image = el; }}
             className={styles.img}
             src={placeholder}
-            data-src={`https://juweez.co.uk/${item.image_url}`}
+            data-src={`${item.image.resolutions.src}`}
             alt={item.title}
           />
         </div>

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Fuse from 'fuse.js';
 
 import Card from '../components/Card';
@@ -12,8 +13,8 @@ class IndexPage extends Component {
     super(props);
 
     this.state = {
-      allCards: [],
-      searchResults: [],
+      allCards: this.props.data.cards.edges,
+      searchResults: this.sortCards(this.props.data.cards.edges),
       selectedCard: undefined,
       isOverlayOpen: false,
     };
@@ -21,27 +22,17 @@ class IndexPage extends Component {
     this.openOverlay = this.openOverlay.bind(this);
     this.closeOverlay = this.closeOverlay.bind(this);
     this.searchCards = this.searchCards.bind(this);
+    this.sortCards = this.sortCards.bind(this);
   }
 
-  componentDidMount() {
-    this.loadData();
-  }
+  sortCards(cards) {
+    this.sortedCards = cards.sort((a, b) => {
+      if (a.node.title < b.node.title) return -1;
+      if (a.node.title > b.node.title) return 1;
+      return 0;
+    });
 
-  loadData() {
-    fetch('https://juweez.co.uk/api/cards.json')
-      .then(response => response.json())
-      .then((data) => {
-        const sortedCards = data.data.sort((a, b) => {
-          if (a.title < b.title) return -1;
-          if (a.title > b.title) return 1;
-          return 0;
-        });
-
-        this.setState({
-          allCards: data.data,
-          searchResults: sortedCards,
-        });
-      }).catch(err => console.error('Cannot retrieve card data.', err)); // eslint-disable-line no-console
+    return this.sortedCards;
   }
 
   openOverlay(evt, item) {
@@ -63,7 +54,7 @@ class IndexPage extends Component {
     const searchTerm = this.inputElement.value;
 
     const options = {
-      keys: ['title'],
+      keys: ['node.title'],
       threshold: 0.5,
       shouldSort: true,
     };
@@ -82,8 +73,8 @@ class IndexPage extends Component {
   }
 
   render() {
-    const cards = this.state.searchResults.map(item => (
-      <Card item={item} key={item.id} openOverlay={this.openOverlay} />
+    const cards = this.state.searchResults.map(({ node }) => (
+      <Card item={node} key={node.id} openOverlay={this.openOverlay} />
     ));
 
     return (
@@ -101,4 +92,37 @@ class IndexPage extends Component {
   }
 }
 
+IndexPage.propTypes = {
+  data: PropTypes.object.isRequired,
+};
+
 export default IndexPage;
+
+export const pageQuery = graphql`
+  query PageQuery {
+    cards: allContentfulPlayingCards {
+      edges {
+        node {
+          id
+          title
+          image {
+            resolutions(height: 555, toFormat: WEBP) {
+              width
+              height
+              src
+              srcSet
+            }
+          }
+          brand
+          manufacturer
+          yearOfRelease
+          yearOfPurchase
+          numberOfCopies
+          printEditionRun
+          kickstarter
+          url
+        }
+      }
+    }
+  }
+`;

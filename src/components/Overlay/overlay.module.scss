@@ -137,6 +137,7 @@
   text-indent: -9999px;
   cursor: pointer;
   transition: transform .25s ease-in-out;
+  overflow: hidden;
 
   &:hover {
     transform: rotate(180deg);

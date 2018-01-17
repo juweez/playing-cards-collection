@@ -5,6 +5,8 @@ plugins:
   - import
 env:
   browser: true
+globals:
+  graphql: true
 rules:
   space-before-function-paren: 0
   react/jsx-filename-extension: [1, { "extensions": [".js", ".jsx"] }]

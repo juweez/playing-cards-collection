@@ -16,29 +16,25 @@ export default function Overlay({ open, closeOverlay, item }) {
           {item && (
             <div className={styles.content}>
               <div className={styles.imgContainer}>
-                <img className={styles.img} src={`https://juweez.co.uk/${item.image_url}`} alt={item.title} />
+                <img className={styles.img} src={item.image.resolutions.src} alt={item.title} />
               </div>
               <div className={styles.details}>
                 <h2 className={styles.title}>{item.title}</h2>
                 <p><span className={styles['property-title']}>Brand</span> {item.brand}</p>
-                <p><span className={styles['property-title']}>Manufacturer</span> {item.manufacturer.label || '-'}</p>
-                {item.date_of_issue && (
-                  <p><span className={styles['property-title']}>Release date</span> {item.date_of_issue}</p>
+                {item.manufacturer !== 'null' && (
+                  <p><span className={styles['property-title']}>Manufacturer</span> {item.manufacturer}</p>
                 )}
-                {item.date_of_purchase && (
-                  <p><span className={styles['property-title']}>Purchase date</span> {item.date_of_purchase}</p>
+                {item.yearOfRelease !== 'null' && (
+                  <p><span className={styles['property-title']}>Release date</span> {item.yearOfRelease}</p>
                 )}
-                {item.copies && (
-                  <p><span className={styles['property-title']}>Copies</span> {item.copies}</p>
+                {item.yearOfPurchase !== 'null' && (
+                  <p><span className={styles['property-title']}>Purchase date</span> {item.yearOfPurchase}</p>
                 )}
-                {item.condition && (
-                  <p><span className={styles['property-title']}>Condition</span> {item.condition}</p>
+                {item.numberOfCopies !== 'null' && (
+                  <p><span className={styles['property-title']}>Copies</span> {item.numberOfCopies}</p>
                 )}
-                {item.print_edition && (
-                  <p><span className={styles['property-title']}>Print edition</span> {item.print_edition}</p>
-                )}
-                {item.print_run && (
-                  <p><span className={styles['property-title']}>Print run</span> {item.print_run}</p>
+                {item.printEditionRun !== 'null' && (
+                  <p><span className={styles['property-title']}>Print edition/run</span> {item.printEditionRun}</p>
                 )}
               </div>
             </div>
