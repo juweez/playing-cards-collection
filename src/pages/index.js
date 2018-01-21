@@ -80,7 +80,11 @@ class IndexPage extends Component {
     return (
       <div>
         <Header />
-        <Search inputRef={(el) => { this.inputElement = el; }} searchCards={this.searchCards} />
+        <Search
+          inputRef={(el) => { this.inputElement = el; }}
+          searchCards={this.searchCards}
+          count={this.state.searchResults.length}
+        />
         <Grid>{cards}</Grid>
         <Overlay
           open={this.state.isOverlayOpen}

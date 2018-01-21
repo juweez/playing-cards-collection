@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 8px;
+  padding: 4px;
+  border: 2px solid #d69e4f;
+  color: #d69e4f;
+  font-weight: bold;
+  border-radius: 50%;
+  min-width: 34px;
+  min-height: 34px;
+  text-align: center;
+  font-size: 12px;
+
+  @media all and (min-width: 641px) {
+    min-width: 42px;
+    min-height: 42px;
+    font-size: 14px;
+  }
+
+  @media all and (min-width: 768px) {
+    min-width: 52px;
+    min-height: 52px;
+    font-size: 16px;
+  }
+}

@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import Counter from '../Counter';
+
 import styles from './search.module.scss';
 
-export default function Search({ inputRef, searchCards }) {
+export default function Search({ inputRef, searchCards, count }) {
   return (
     <div className={styles.group}>
       <label className={styles.label} htmlFor="search">Search</label>
@@ -14,6 +16,7 @@ export default function Search({ inputRef, searchCards }) {
         onKeyUp={searchCards}
         placeholder="Search..."
       />
+      <Counter count={count} />
     </div>
   );
 }
@@ -21,4 +24,5 @@ export default function Search({ inputRef, searchCards }) {
 Search.propTypes = {
   inputRef: PropTypes.func.isRequired,
   searchCards: PropTypes.func.isRequired,
+  count: PropTypes.number.isRequired,
 };
