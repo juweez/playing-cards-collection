@@ -29,7 +29,7 @@
     "dotenv": "^4.0.0",
     "fuse.js": "^3.2.0",
     "gatsby": "^1.9.145",
-    "gatsby-link": "^1.6.32",
+    "gatsby-link": "^2.0.15",
     "gatsby-plugin-favicon": "^2.1.1",
     "gatsby-plugin-manifest": "^1.0.12",
     "gatsby-plugin-react-helmet": "^1.0.8",
