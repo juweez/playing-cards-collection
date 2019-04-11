@@ -28,7 +28,7 @@
     "classnames": "^2.2.5",
     "dotenv": "^4.0.0",
     "fuse.js": "^3.2.0",
-    "gatsby": "^1.9.145",
+    "gatsby": "^2.3.19",
     "gatsby-link": "^1.6.32",
     "gatsby-plugin-favicon": "^2.1.1",
     "gatsby-plugin-manifest": "^1.0.12",
